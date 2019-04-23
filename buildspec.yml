@@ -8,15 +8,11 @@ phases:
   build:
       commands: 
           
-          - npm install
-          - npm install -g babel
-          - npm install -g eslint
-          - npm install -g babel-eslint
-          - npm install -g eslint-plugin-react
-          - npm install -g eslint-plugin-json
-          - npm run build 
+          - make install CI=true
+          - make global-install
+          - make build
           # - npm run test-cov        
-  
+
   post_build:
       commands:
         - mv ./appspec.yml ./build
@@ -26,4 +22,3 @@ phases:
 artifacts:
   files:
     - '**/*'
-    
