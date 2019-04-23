@@ -1,23 +1,28 @@
---- 
-artifacts: 
-  files: 
-    - "**/*"
-phases: 
-  build: 
-    commands: 
-      - "npm install"
-      - "npm install -g babel"
-      - "npm install -g eslint"
-      - "npm install -g babel-eslint"
-      - "npm install -g eslint-plugin-react"
-      - "npm install -g eslint-plugin-json"
-      - "npm run build"
-  post_build: 
-    commands: 
-      - "mv ./appspec.yml ./build"
-      - "find . ! -regex '^./build\\(/.*\\)?' -delete"
-      - "mv ./build/* ."
-      - "rm -rf ./build"
-  pre_build: 
-    commands: ~
 version: 0.2
+
+phases:
+
+  pre_build:
+      commands: 
+        
+  build:
+      commands: 
+          
+          - npm install
+          - npm install -g babel
+          - npm install -g eslint
+          - npm install -g babel-eslint
+          - npm install -g eslint-plugin-react
+          - npm install -g eslint-plugin-json
+          - npm run build 
+          # - npm run test-cov        
+  
+  post_build:
+      commands:
+        - mv ./appspec.yml ./build
+        - find . ! -regex '^./build\(/.*\)?' -delete
+        - mv ./build/* .
+        - rm -rf ./build 
+artifacts:
+  files:
+    - '**/*'
