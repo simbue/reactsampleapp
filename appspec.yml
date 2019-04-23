@@ -1,10 +1,7 @@
---- 
-files: 
-  - 
-    destination: /var/www/html/build
-    source: /build
-  - 
-    destination: /var/www/html
-    source: /node_modules
-os: linux
 version: 0.0
+os: linux 
+files:
+  - source: /build
+    destination: /var/www/html/build
+  - source: /node_modules
+    destination: /var/www/html/node_modules
