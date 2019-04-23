@@ -3,5 +3,5 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/build
-  - source: /node_modules
+  - source: /
     destination: /var/www/html/node_modules
