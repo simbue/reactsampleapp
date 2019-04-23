@@ -19,7 +19,7 @@ phases:
   
   post_build:
       commands:
-        - mv ./appspec.yaml ./build
+        - mv ./appspec.yml ./build
         - find . ! -regex '^./build\(/.*\)?' -delete
         - mv ./build/* .
         - rm -rf ./build 
