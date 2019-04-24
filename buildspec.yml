@@ -16,13 +16,7 @@ phases:
           - npm install -g eslint-plugin-json
           - npm run build 
           # - npm run test-cov        
-  
-  post_build:
-      commands:
-        - mv ./appspec.yml ./build
-        - find . ! -regex '^./build\(/.*\)?' -delete
-        - mv ./build/* .
-        - rm -rf ./build 
+
 artifacts:
   files:
     - '**/*'
